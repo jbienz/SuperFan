@@ -30,39 +30,39 @@ Our customized sketch for the T'REX expects a connection at 19200/8-N-1 (19200 k
 
 Informs the controller that a session is starting. Currently the controller doesn't do anything in response to this command but that may change. Therefore simulators should send this command when starting a game.
  
-Command: '1' (ASCII 0x31)
-Param1: Ignored
-Param2: Ignored
+- Command: '1' (ASCII 0x31)
+- Param1: Ignored
+- Param2: Ignored
 
 
 ####Speed####
 
 Sets the two motors to individual absolute speeds.
  
-Command: 'S' (ASCII 0x53)
-Param1: Left motor speed (0-255)
-Param2: Right motor speed (0-255)
+- Command: 'S' (ASCII 0x53)
+- Param1: Left motor speed (0-255)
+- Param2: Right motor speed (0-255)
 
 
 ####Shutdown####
 
 Informs the controller that a session is ending. Currently the controller responds to this command by setting both motors to speed 0. Simulators should send this command when exiting from the game.
  
-Command: '0' (ASCII 0x30)
-Param1: Ignored
-Param2: Ignored
+- Command: '0' (ASCII 0x30)
+- Param1: Ignored
+- Param2: Ignored
 
 
 ###Example Packets###
 
 **Signal a new session and prepare to receive speed data**
-// [Start] | ['1'] Startup | [00] | [00] 
-`0x0F 0x31 0x00 0x00`  
+    // [Start] | [1] Startup | [00] | [00] 
+    0x0F 0x31 0x00 0x00
  
 **Set Left speed to 12% and Right speed to 50%** 
-// [Start] | ['S'] Speed | [21]  | [127]  :: (21 / 255 = 12%) (127 / 255 = 50%)
-`0x0F 0x53 0x15 0x7F` 
+    // [Start] | [S] Speed | [21]  | [127]  :: (21 / 255 = 12%) (127 / 255 = 50%)
+    0x0F 0x53 0x15 0x7F 
  
 **End the session and stop all motors** 
-// [Start] | ['0'] Shutdown | [00] | [00]
-`0x0F 0x30 0x00 0x00` 
+    // [Start] | [0] Shutdown | [00] | [00]
+    0x0F 0x30 0x00 0x00 
