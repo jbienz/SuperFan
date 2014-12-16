@@ -58,16 +58,19 @@ Informs the controller that a session is ending. Currently the controller respon
 **Signal a new session and prepare to receive speed data**
 
     // [Start] | [1] Startup | [00] | [00]
-    0x0F 0x31 0x00 0x00
+    0x0F 0x31 0x00 0x00     // Realterm
+    <15><49><0><0>          // SimTools
 
  
 **Set Left speed to 12% and Right speed to 50%** 
 
     // [Start] | [S] Speed | [21]  | [127]  :: (21 / 255 = 12%) (127 / 255 = 50%)
-    0x0F 0x53 0x15 0x7F 
+    0x0F 0x53 0x15 0x7F     // Realterm
+    <15><83><21><127>       // SimTools
 
  
 **End the session and stop all motors** 
 
     // [Start] | [0] Shutdown | [00] | [00]
-    0x0F 0x30 0x00 0x00 
+    0x0F 0x30 0x00 0x00     // Realterm
+    <15><48><0><0>          // SimTools
