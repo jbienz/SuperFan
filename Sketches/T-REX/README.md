@@ -56,13 +56,18 @@ Informs the controller that a session is ending. Currently the controller respon
 ###Example Packets###
 
 **Signal a new session and prepare to receive speed data**
-    // [Start] | [1] Startup | [00] | [00] 
+
+    // [Start] | [1] Startup | [00] | [00]
     0x0F 0x31 0x00 0x00
+
  
 **Set Left speed to 12% and Right speed to 50%** 
+
     // [Start] | [S] Speed | [21]  | [127]  :: (21 / 255 = 12%) (127 / 255 = 50%)
     0x0F 0x53 0x15 0x7F 
+
  
 **End the session and stop all motors** 
+
     // [Start] | [0] Shutdown | [00] | [00]
     0x0F 0x30 0x00 0x00 
