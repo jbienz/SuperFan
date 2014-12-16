@@ -12,7 +12,7 @@ When the T'REX board is powered on it will attempt to initialize the Bluetooth m
 When initialization has completed the board will 'beep' the motor twice. This indicates that the board is ready to be paired or to receive commands over Bluetooth.   
 
 ## Protocol ##
-Our customized sketch for the T'REX expects a connection at 19200/8-N-1 (19200 kbps, 8 data bits, no parity bit, 1 stop bit). The protocol is a simple 4-byte protocol in the following format:
+Our customized sketch for the T'REX expects a connection at 115200/8-N-1 (115200 kbps, 8 data bits, no parity bit, 1 stop bit). The protocol is a simple 4-byte protocol in the following format:
 
 
     [Start] [Command] [Param1] [Param2]
