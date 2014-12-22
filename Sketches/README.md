@@ -21,7 +21,7 @@ The recommended protocol for SuperFan controllers starts with a connection at 19
 
 ####Startup####
 
-Informs the controller that a session is starting. Currently the controller doesn't do anything in response to this command but that may change. Therefore simulators should send this command when starting a game.
+Informs the controller that a session is starting. The controller may or may not  do anything in response to this command. Simulators should send this command when starting a game.
  
 - Command: '1' (ASCII 0x31)
 - Param1: Ignored
@@ -54,7 +54,7 @@ Sets the log level of the controller (for diagnostic purposes)
 
 ####Shutdown####
 
-Informs the controller that a session is ending. Currently the controller responds to this command by setting both motors to speed 0. Simulators should send this command when exiting from the game.
+Informs the controller that a session is ending. Usually the controller responds to this command by setting all motors to speed 0. Simulators should send this command when exiting from the game.
  
 - Command: '0' (ASCII 0x30)
 - Param1: Ignored
