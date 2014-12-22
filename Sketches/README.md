@@ -32,7 +32,7 @@ Informs the controller that a session is starting. Currently the controller does
 
 ####Speed####
 
-Sets the two motors to individual absolute speeds.
+Sets absolute speed for up to four motors. The recommended placement of fans is #1 Front Left, #2 Front Right, #3 Rear Right and #4 Rear Left
  
 - Command: 'S' (ASCII 0x53)
 - Param1: Motor 1 speed (0-255)
