@@ -3,7 +3,7 @@
 This section includes the Arduino sketches that control actual fan hardware. Currently there is only one driver and it's built on the T'Rex controller board.
 
 ## Protocol ##
-The recommended protocol for SuperFan controllers starts with a connection at 19200/8-N-1 (19200 kbps, 8 data bits, no parity bit, 1 stop bit). The protocol is a simple 6-byte protocol in the following format:
+The recommended protocol for SuperFan controllers starts with a connection at 115200/8-N-1 (115200 kbps, 8 data bits, no parity bit, 1 stop bit). The protocol is a simple 6-byte protocol in the following format:
 
 
     [Start] [Command] [Param1] [Param2] [Param3] [Param4]
