@@ -87,6 +87,7 @@ void Bluetooth()
     switch (op)
     {
       case '1': // Initialize
+        lmspeed = rmspeed = 0;
         if (loglevel >= LOG_INFO)
         {
           Serial.println("Initialized.");

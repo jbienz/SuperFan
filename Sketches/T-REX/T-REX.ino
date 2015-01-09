@@ -97,14 +97,7 @@ void setup()
   if(mode==0)                                          // no RC signals detected
   {
     BluetoothConfig();                                 // attempts to configure bluetooth module - changes to mode 2 if successful
-    if (mode==2)
-    {
-      MotorBeep(2);                                    // generate 2 beeps from the motors to indicate bluetooth mode enabled
-      if (diagnostics >= LOG_INFO)
-      {
-        Serial.println("Bluetooth Ready");
-      }
-    }      
+    if (mode==2) { MotorBeep(2); }                     // generate 2 beeps from the motors to indicate bluetooth mode enabled
   }
   
   //----------------------------------------------------- Configure for I²C control ------------------------------------------------------
